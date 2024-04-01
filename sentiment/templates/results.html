@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <!-- <link rel="stylesheet" href="/public/css/main2.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * Recommendation_Page */ * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "poppins", sans-serif;
+            height: 100vh;
+        }
+
+        .back {
+            opacity: 0.8;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 99.9%;
+            z-index: -10;
+        }
+
+        .initial_movie {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .recommendations {
+            display: flex;
+            justify-content: center;
+            padding-top: 200px;
+            position: relative;
+            color: white;
+        }
+
+        .r-block {
+            height: 400px;
+            width: 250px;
+            border: 2px solid white;
+            border-radius: 10px;
+            margin-left: 20px;
+            padding-top: 20px;
+            background-color: black;
+        }
+
+        .r-block img {
+            height: 200px;
+            width: 170px;
+            display: block;
+            margin: auto;
+            border-radius: 20px;
+        }
+
+        .m_name {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            max-height: 50px;
+        }
+
+        .s_line{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .m_date{
+            color: black;
+            background-color: white;
+            padding: 4px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 5px;
+            height: 20px;
+            margin-right: 25px;
+        }
+
+        .m_genre {
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+        }
+
+        .m_genre p {
+            font-size: 17px;
+
+        }
+
+        .m_imdb {
+            display: flex;
+            padding-left: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .m_imdb i {
+            padding-left: 10px;
+            font-size: 2em;
+        }
+        .back_btn{
+            text-decoration: none;
+            position: relative;
+        }
+        .back_btn p{
+            color: white;
+            background-color: red;
+            font-weight: 700;
+            font-size: 22px;
+            padding: 10px 10px 10px 35px;
+            margin-top: 30px;
+            margin-left: 105px;
+            width: 70px;
+            border: 2px solid white;
+            border-radius: 15px;
+            text-decoration: none;
+            cursor: pointer;
+            position: absolute;
+            z-index: -5;
+        }
+        .back_btn i{
+            margin-left: 40px;
+            color: white;
+            font-size: 12px;
+            margin-top: 47px;
+            text-decoration: none;
+            position: absolute;
+            z-index: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <img src="https://www.shutterstock.com/image-illustration/dot-white-gray-wave-light-600nw-1888535062.jpg" alt="" class="back">
+
+    {% if flag==0 %}
+    <h4>{{ response }}</h4>
+{% else %}
+    <h4>{{ '1. Character Analysis: '+response[0] }}</h4>
+    <h4>{{ '2. Theme of Conversation: '+response[1] }}</h4>
+    <h4>{{ '3. Emotional Analysis: '+response[2] }}</h4>
+    <h4>{{ '4. Bias and Perspective: '+response[3] }}</h4>
+    <h4>{{ '5. Intention Analysis: '+response[4] }}</h4>
+
+{% endif %}
+    <a href="https://conversationanalyzer.wl.r.appspot.com" class="back_btn" >
+
+        <i class="fa fa-home" aria-hidden="true"></i>    
+        <p>Home</p> 
+    </a>
+
+</body>
+
+</html>
